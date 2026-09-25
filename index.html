@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Del'pizza — доставка пиццы, роллов и суши в Баймаке</title>
+<meta name="description" content="Del'pizza Баймак: пицца, роллы, суши, шаурма, бургеры. Доставка по городу от 60 минут, самовывоз, онлайн-заказ. Ежедневно 10:00–23:00.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍕</text></svg>">
+</head>
+<body>
+
+<!-- верхняя полоса -->
+<div class="topbar">
+  <div class="container">
+    <div class="tb-l">
+      <span>📍 Баймак, пр-т Салавата Юлаева, 28а</span>
+      <span class="dot">•</span>
+      <span>🕙 Ежедневно 10:00–23:00</span>
+    </div>
+    <div class="tb-r">
+      <a href="tel:+79659374088">📞 +7 (965) 937-40-88</a>
+      <span class="dot">•</span>
+      <a href="https://vk.com/delpizzabaimak" target="_blank" rel="noopener">ВКонтакте</a>
+      <a href="https://wa.me/79659374088" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<!-- шапка -->
+<header class="hdr">
+  <div class="container">
+    <a class="logo" href="#top">
+      <svg class="lg-ic" viewBox="0 0 64 64" aria-hidden="true">
+        <defs><linearGradient id="lgG" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#ff8a1e"/><stop offset="1" stop-color="#e8453c"/>
+        </linearGradient></defs>
+        <circle cx="32" cy="32" r="30" fill="url(#lgG)"/>
+        <path d="M32 12 L52 46 Q32 54 12 46 Z" fill="#fff7ec"/>
+        <circle cx="30" cy="30" r="3.4" fill="#e8453c"/><circle cx="38" cy="39" r="3.1" fill="#e8453c"/>
+        <circle cx="24" cy="41" r="2.8" fill="#e8453c"/><circle cx="34" cy="22" r="2.5" fill="#e8453c"/>
+      </svg>
+      <span class="lg-tx"><b>Del<i>'</i>pizza</b><span>пицца · роллы · суши</span></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#menu">Меню</a>
+      <a href="#hits-sec">Хиты</a>
+      <a href="#promo-sec">Акции</a>
+      <a href="#about">О нас</a>
+      <a href="#delivery">Доставка и оплата</a>
+      <a href="#jobs">Вакансии</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <div class="h-btns">
+      <div class="h-phone">
+        <a href="tel:+79659374088">+7 (965) 937-40-88</a>
+        <small>доставка · бронь столов</small>
+      </div>
+      <button class="cart-btn" id="cartBtn">
+        <span>🛒</span><span class="lbl">Корзина</span><span class="sum" id="cartSum">0 ₽</span>
+        <span class="badge" id="cartBadge" hidden>0</span>
+      </button>
+      <button class="burger" id="burger" aria-label="Меню"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- промо-полоса -->
+<div class="strip">
+  <div class="container">
+    <span>🎁 Скидка 15% на первый заказ — промокод <b>DEL15</b></span>
+    <span>до конца акции:</span><span class="tmr" id="tmr">00:00:00</span>
+  </div>
+</div>
+
+<!-- герой -->
+<section class="hero" id="top">
+  <div class="container">
+    <div>
+      <h1>Доставка горячей <em>пиццы и роллов</em> в Баймаке</h1>
+      <p class="lead">Готовим на своей кухне каждое утро: тонкое тесто, свежие начинки, роллы по классическим рецептам. Доставим за <b>60 минут</b> или заберёте сами — пекарня на Карла Маркса, 1.</p>
+      <div class="h-cta">
+        <a class="btn btn-acc" href="#menu">Смотреть меню 🍕</a>
+        <a class="btn btn-ghost" href="tel:+79659374088">Позвонить и заказать</a>
+      </div>
+      <div class="h-facts">
+        <div class="hf"><b>4.2 ★</b><span>рейтинг в Яндексе</span></div>
+        <div class="hf"><b>839</b><span>оценок гостей</span></div>
+        <div class="hf"><b>60 мин</b><span>доставка по городу</span></div>
+        <div class="hf"><b>10:00–23:00</b><span>без выходных</span></div>
+      </div>
+    </div>
+    <div class="hero-vis">
+      <img class="hv-main" src="img/pizza-pepperoni.jpg" alt="Пицца Пепперони" onerror="this.onerror=null;this.src='img/pizza-margherita.jpg'">
+      <div class="hv-badge"><b>2 по цене 1</b><span>акция на пиццы 30 см</span></div>
+      <div class="hv-timer"><small>ДО КОНЦА АКЦИИ</small><b id="tmr2">--:--:--</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- преимущества -->
+<section class="section" style="padding-top:26px">
+  <div class="container feats">
+    <div class="feat"><div class="f-ic">🚀</div><div><b>Доставка за 60 минут</b><span>по всему Баймаку</span></div></div>
+    <div class="feat"><div class="f-ic">🍕</div><div><b>Готовим после заказа</b><span>не разогреваем — печём</span></div></div>
+    <div class="feat"><div class="f-ic">🎈</div><div><b>Детская комната и 2 зала</b><span>можно всей семьёй</span></div></div>
+    <div class="feat"><div class="f-ic">💳</div><div><b>Оплата как удобно</b><span>карта, наличные, онлайн</span></div></div>
+  </div>
+</section>
+
+<!-- хиты -->
+<section class="section alt" id="hits-sec">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <h2>Хиты недели 🔥</h2>
+        <div class="sub">Что чаще всего заказывают в Del'pizza</div>
+      </div>
+      <a class="btn btn-ghost btn-sm" href="#menu" data-cat-link="all">Всё меню →</a>
+    </div>
+    <div class="hits" id="hits"></div>
+  </div>
+</section>
+
+<!-- меню -->
+<section class="section" id="menu">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <h2>Меню</h2>
+        <div class="sub">Пицца на тонком тесте, роллы, сеты и всё к столу — найдено <b id="foundCount">0</b> позиций</div>
+      </div>
+      <div class="tools">
+        <input id="search" type="search" placeholder="Поиск по меню…">
+        <select id="sort">
+          <option value="pop">По популярности</option>
+          <option value="cheap">Сначала дешевле</option>
+          <option value="expensive">Сначала дороже</option>
+        </select>
+      </div>
+    </div>
+    <div class="cats-bar" style="border-radius:14px;margin-bottom:20px;position:static">
+      <div class="cats" id="cats"></div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<!-- акции -->
+<section class="section alt" id="promo-sec">
+  <div class="container">
+    <div class="sec-head"><div><h2>Акции</h2><div class="sub">Следите за новинками — мы в ВКонтакте</div></div></div>
+    <div class="promos3">
+      <div class="promo p1"><span class="p-tag">ХИТ</span>
+        <h3>2 пиццы 30 см по цене одной</h3>
+        <p>Каждую пятницу и выходные: выбираете две пиццы из списка — вторая в подарок.</p>
+        <a class="btn btn-acc btn-sm" href="#menu" style="align-self:flex-start">Выбрать пиццы</a>
+      </div>
+      <div class="promo p2"><span class="p-tag">НОВЫМ</span>
+        <h3>−15% на первый заказ</h3>
+        <p>Промокод <b>DEL15</b> для новых гостей сайта. Действует на всё меню до конца акции.</p>
+        <a class="btn btn-ghost btn-sm" href="#menu" style="align-self:flex-start">Собрать заказ</a>
+      </div>
+      <div class="promo p3"><span class="p-tag">ДЕТЯМ</span>
+        <h3>День рождения в Del'pizza</h3>
+        <p>Забронируйте зал, детская комната с играми — а мы подарим пиццу виновнику торжества.</p>
+        <a class="btn btn-ghost btn-sm" href="tel:+79659374088" style="align-self:flex-start">Забронировать зал</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- о нас -->
+<section class="section" id="about">
+  <div class="container about">
+    <div>
+      <h2>О нас</h2>
+      <p style="margin-top:14px">Del'pizza — семейная пиццерия в центре Баймака. Мы открылись в 2025 году и с первого дня делаем главное: пиццу на тонком тесте, роллы и суши из свежих продуктов, кофе с собой и десерты к чаю.</p>
+      <p>У нас два этажа залов и детская комната — можно шумной компанией, семьёй или вдвоём. А если не хочется выходить из дома — привезём сами: горячее, в термосумке, за 60 минут.</p>
+      <p>Пекарня и дополнительные позиции — на ул. Карла Маркса, 1: свежая выпечка каждый день.</p>
+    </div>
+    <div class="a-facts">
+      <div class="afact"><b>2025</b><span>год открытия</span></div>
+      <div class="afact"><b>2 зала</b><span>+ детская комната</span></div>
+      <div class="afact"><b>4.2 ★</b><span>рейтинг в Яндекс.Картах</span></div>
+      <div class="afact"><b>839</b><span>оценок посетителей</span></div>
+      <div class="afact"><b>60 мин</b><span>средняя доставка</span></div>
+      <div class="afact"><b>10–23</b><span>работаем без выходных</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- доставка и оплата -->
+<section class="section alt" id="delivery">
+  <div class="container">
+    <div class="sec-head"><div><h2>Доставка и оплата</h2><div class="sub">Всё просто: собрали заказ — мы привезли</div></div></div>
+    <div class="deliv">
+      <div class="dcard">
+        <h3>🚚 Доставка</h3>
+        <ul>
+          <li>По г. Баймак — <b>60 минут</b></li>
+          <li>Бесплатно при заказе от <b>499 ₽</b></li>
+          <li>Иначе — 150 ₽ по городу</li>
+          <li>Работаем ежедневно 10:00–23:00</li>
+        </ul>
+      </div>
+      <div class="dcard">
+        <h3>🥡 Самовывоз</h3>
+        <ul>
+          <li>Забирайте из кафе: пр-т Салавата Юлаева, 28а</li>
+          <li>Выпечка и десерты — пекарня на Карла Маркса, 1</li>
+          <li>Готовность — 20–30 минут</li>
+        </ul>
+      </div>
+      <div class="dcard">
+        <h3>💳 Оплата</h3>
+        <ul>
+          <li>Наличными и картой курьеру</li>
+          <li>Картой в кафе</li>
+          <li>Онлайн на сайте — СБП / карта</li>
+          <li>Чек — по 54-ФЗ</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- вакансии -->
+<section class="section" id="jobs">
+  <div class="container">
+    <div class="sec-head"><div><h2>Вакансии</h2><div class="sub">Работа рядом с домом, график 2/2 · 10:00–23:00</div></div></div>
+    <div class="jobs">
+      <div class="job">
+        <div><b>Кассир / помощник кассира</b><p>Улыбчивые и ответственные — научим всему</p></div>
+        <a class="btn btn-ghost btn-sm" href="tel:+79659374088">Позвонить</a>
+      </div>
+      <div class="job">
+        <div><b>Сотрудник на кухню</b><p>Нарезка овощей и мяса, опыт не обязателен</p></div>
+        <a class="btn btn-ghost btn-sm" href="tel:+79659374088">Позвонить</a>
+      </div>
+      <div class="job">
+        <div><b>Курьер с авто</b><p>Знание города, аккуратность, доброжелательность</p></div>
+        <a class="btn btn-ghost btn-sm" href="tel:+79659374088">Позвонить</a>
+      </div>
+      <div class="job">
+        <div><b>Официант</b><p>Обслуживание залов, дружный коллектив</p></div>
+        <a class="btn btn-ghost btn-sm" href="tel:+79659374088">Позвонить</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section alt">
+  <div class="container">
+    <div class="sec-head"><div style="margin:0 auto;text-align:center;width:100%"><h2>Часто спрашивают</h2></div></div>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-q">Сколько ждать доставку?<span class="fi">+</span></button><div class="faq-a"><p>По Баймаку — в среднем 60 минут. В часы пик (18:00–21:00) может занять чуть больше — предупредим по телефону.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Можно ли забронировать стол или зал?<span class="fi">+</span></button><div class="faq-a"><p>Да! Звоните +7 (965) 937-40-88 — забронируем столик, детский праздник или второй этаж для компании.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Как оплатить заказ онлайн?<span class="fi">+</span></button><div class="faq-a"><p>На сайте выберите «Онлайн-оплата» при оформлении — оплата по СБП или картой. Сейчас оплата работает в тестовом режиме: деньги не списываются, заказ просто сохраняется.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Есть ли детская комната?<span class="fi">+</span></button><div class="faq-a"><p>Да, детская зона с играми — родители могут спокойно поужинать. По будням днём обычно свободно.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Как к вам устроиться на работу?<span class="fi">+</span></button><div class="faq-a"><p>Открыты вакансии: кассир, сотрудник кухни, курьер, официант. График 2/2, 10:00–23:00. Звоните — расскажем подробности.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- контакты -->
+<section class="section" id="contacts">
+  <div class="container">
+    <div class="sec-head"><div><h2>Контакты</h2><div class="sub">Приходите в гости или звоните</div></div></div>
+    <div class="contacts">
+      <div class="cbox">
+        <div class="crow"><div class="c-ic">📍</div><div><b>Кафе:</b> г. Баймак, пр-т Салавата Юлаева, 28а<br><span style="color:var(--tx2);font-size:13px">Пекарня: ул. Карла Маркса, 1</span></div></div>
+        <div class="crow"><div class="c-ic">📞</div><div>
+          <a href="tel:+79659374088">+7 (965) 937-40-88</a> — доставка и бронь зала<br>
+          <a href="tel:+79373202480">+7 (937) 320-24-80</a> — доставка, бронь 2 этажа
+        </div></div>
+        <div class="crow"><div class="c-ic">🕙</div><div>Ежедневно с 10:00 до 23:00<br><span style="color:var(--tx2);font-size:13px">без перерывов и выходных</span></div></div>
+        <div class="soc">
+          <a href="https://vk.com/delpizzabaimak" target="_blank" rel="noopener" title="ВКонтакте">VK</a>
+          <a href="https://wa.me/79659374088" target="_blank" rel="noopener" title="WhatsApp">WA</a>
+        </div>
+      </div>
+      <div class="mapbox">
+        <div style="font-size:44px">🗺️</div>
+        <b style="font-family:Montserrat">Мы на карте</b>
+        <span style="color:var(--tx2);font-size:13.5px;max-width:340px">пр-т Салавата Юлаева, 28а, Баймак. Нажмите — построим маршрут в Яндекс.Картах.</span>
+        <a class="btn btn-acc btn-sm" href="https://yandex.ru/maps/org/del_pizza/180347199015/" target="_blank" rel="noopener">Открыть в Яндекс.Картах</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- футер -->
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div>
+        <div class="fline" style="font-family:Montserrat;font-weight:800;font-size:20px">Del<span style="color:var(--acc)">'</span>pizza</div>
+        <div class="fline">Пиццерия и доставка в Баймаке. Пицца на тонком тесте, роллы, суши, десерты и кофе с собой.</div>
+        <div class="fline">Работаем ежедневно 10:00–23:00</div>
+      </div>
+      <div>
+        <h4>Меню</h4>
+        <a href="#menu" data-cat-link="pizza">Пиццы</a>
+        <a href="#menu" data-cat-link="rolls">Роллы и суши</a>
+        <a href="#menu" data-cat-link="combo">Комбо и сеты</a>
+        <a href="#menu" data-cat-link="shaurma">Шаурма и донеры</a>
+      </div>
+      <div>
+        <h4>Информация</h4>
+        <a href="#delivery">Доставка и оплата</a>
+        <a href="#promo-sec">Акции</a>
+        <a href="#jobs">Вакансии</a>
+        <a href="#about">О нас</a>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <a href="tel:+79659374088">+7 (965) 937-40-88</a>
+        <a href="tel:+79373202480">+7 (937) 320-24-80</a>
+        <a href="https://vk.com/delpizzabaimak" target="_blank" rel="noopener">ВКонтакте</a>
+        <a href="https://wa.me/79659374088" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© <span id="year">2026</span> Del'pizza · г. Баймак, пр-т Салавата Юлаева, 28а</span>
+      <span class="tmh">Цены и состав блюд уточняйте по телефону. Не является публичной офертой.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- корзина -->
+<div class="overlay-bg" id="ovBg"></div>
+<aside class="drawer" id="drawer" aria-label="Корзина">
+  <div class="dr-head">
+    <b>Корзина<span id="drCount"></span></b>
+    <button class="x-btn" id="drClose">✕</button>
+  </div>
+  <div class="dr-body" id="drBody"></div>
+  <div class="dr-foot">
+    <div class="dr-row"><span>Сумма заказа</span><b id="drSum">0 ₽</b></div>
+    <div class="dr-hint" id="drHint" hidden></div>
+    <button class="btn btn-acc" id="toCheckout">Перейти к оформлению</button>
+  </div>
+</aside>
+
+<!-- модалка товара -->
+<div class="modal" id="mProduct">
+  <div class="m-bg"></div>
+  <div class="m-card">
+    <div class="m-head"><b>Товар</b><button class="x-btn" data-close="mProduct">✕</button></div>
+    <div class="m-body m-item">
+      <img id="mImg" src="" alt="">
+      <div id="mIco"></div>
+      <div>
+        <div class="m-nm" id="mName"></div>
+        <div class="m-sp" id="mSpec"></div>
+        <div class="m-ds" id="mDesc"></div>
+        <div id="mSizes"></div>
+        <div class="m-row">
+          <div class="stepper">
+            <button id="mMinus">−</button><i id="mQty">1</i><button id="mPlus">+</button>
+          </div>
+          <div class="price" id="mPrice" style="font-size:21px"></div>
+          <button class="btn btn-acc" id="mAdd" style="flex:1">В корзину</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- оформление -->
+<div class="modal" id="mCheckout">
+  <div class="m-bg"></div>
+  <div class="m-card">
+    <div class="m-head"><b>Оформление заказа</b><button class="x-btn" data-close="mCheckout">✕</button></div>
+    <div class="m-body">
+      <div id="coItems"></div>
+      <div class="sum-line"><span>Сумма</span><b id="coSum">0 ₽</b></div>
+      <div class="sum-line" id="coDiscRow" hidden><span>Скидка по промокоду</span><b id="coDisc" style="color:var(--ok)">0 ₽</b></div>
+      <div class="sum-line"><span>Доставка</span><b id="coDeliv">бесплатно</b></div>
+      <div class="sum-line"><span>Итого</span><b id="coTotal" style="font-family:Montserrat;font-size:18px">0 ₽</b></div>
+
+      <div class="m-row" style="margin:12px 0 18px">
+        <div class="field" style="flex:1;margin:0">
+          <input id="promoInp" placeholder="Промокод (например DEL15)">
+        </div>
+        <button class="btn btn-dark" id="promoBtn">Применить</button>
+      </div>
+
+      <div class="radios" style="margin-bottom:14px">
+        <label class="radio"><input type="radio" name="way" id="fDelivery" checked><span><b>Доставка</b><span>60 минут по Баймаку · от 499 ₽ бесплатно</span></span></label>
+        <label class="radio"><input type="radio" name="way" id="fPickup"><span><b>Самовывоз</b><span>пр-т Салавата Юлаева, 28а — заберу сам</span></span></label>
+      </div>
+
+      <div class="field" id="coAddrField">
+        <label>Адрес доставки</label>
+        <input id="fAddr" placeholder="ул. Ленина, 12, кв. 3">
+      </div>
+
+      <div class="m-row" style="margin:0 0 14px">
+        <div class="field" style="flex:1;margin:0"><label>Ваше имя</label><input id="fName" placeholder="Как к вам обращаться"></div>
+        <div class="field" style="flex:1;margin:0"><label>Телефон</label><input id="fPhone" inputmode="tel" placeholder="+7 (___) ___-__-__"></div>
+      </div>
+      <div class="field"><label>Комментарий к заказу</label><textarea id="fComment" rows="2" placeholder="Домофон, подъезд, пожелания…"></textarea></div>
+
+      <div class="radios" style="margin-bottom:8px">
+        <label class="radio"><input type="radio" name="pay" id="payCard" checked><span><b>При получении</b><span>наличными или картой курьеру</span></span></label>
+        <label class="radio"><input type="radio" name="pay" id="payOnline"><span><b>Онлайн-оплата · тестовый режим</b><span>СБП или карта — демонстрация, деньги не списываются</span></span></label>
+      </div>
+      <div class="testnote" id="payTestNote" hidden>🧪 Это тестовый режим оплаты: настоящие деньги не списываются. В боевом режиме здесь будет оплата по СБП/карте.</div>
+
+      <label class="agree"><input type="checkbox" id="fAgree">Согласен на обработку персональных данных для оформления заказа</label>
+
+      <div class="m-row" style="margin-top:14px">
+        <button class="btn btn-dark" id="coBack">← В корзину</button>
+        <button class="btn btn-acc" id="coSubmit" style="flex:1">Оформить заказ</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- тестовая оплата -->
+<div class="modal" id="mPay">
+  <div class="m-bg"></div>
+  <div class="m-card narrow">
+    <div class="m-head"><b>Оплата заказа</b><button class="x-btn" data-close="mPay">✕</button></div>
+    <div class="m-body pay-screen">
+      <div class="p-ic">🧪</div>
+      <h3 style="font-family:Montserrat">Тестовый режим оплаты</h3>
+      <p style="color:var(--tx2);font-size:14px;margin:12px 0 6px">Здесь откроется оплата по СБП или картой. Сейчас — демонстрация: реальные деньги не списываются.</p>
+      <div class="testnote" style="text-align:left">После подключения оплаты (СБП) этот экран станет настоящей платёжной формой.</div>
+      <div style="display:flex;gap:10px;margin-top:14px">
+        <button class="btn btn-dark" id="payCancel">Отмена</button>
+        <button class="btn btn-acc" id="payGo" style="flex:1">Оплатить (демо)</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- успех -->
+<div class="modal" id="mOk">
+  <div class="m-bg"></div>
+  <div class="m-card narrow">
+    <div class="m-head"><b>Заказ №<span id="okNum">0</span></b><button class="x-btn" data-close="mOk">✕</button></div>
+    <div class="m-body ok-screen">
+      <div class="ok-ic">✓</div>
+      <h3>Заказ принят!</h3>
+      <p id="okText">Заказ собран и сохранён.</p>
+      <div class="testnote" style="text-align:left;max-height:170px;overflow:auto"><pre id="okOrder" style="white-space:pre-wrap;font:12px/1.5 'Open Sans'"></pre></div>
+      <div style="display:flex;gap:10px;margin-top:6px">
+        <button class="btn btn-dark" id="okSend">Скопировать заказ</button>
+        <button class="btn btn-acc" id="okClose" style="flex:1">Готово</button>
+      </div>
+      <p style="font-size:12px;color:var(--tx2);margin-top:12px">Мы позвоним для подтверждения. Или наберите сами: +7 (965) 937-40-88</p>
+    </div>
+  </div>
+</div>
+
+<!-- плавашки -->
+<div class="fabs">
+  <a class="fab fab-wa" href="https://wa.me/79659374088" target="_blank" rel="noopener" title="WhatsApp">💬</a>
+  <button class="fab fab-up" id="fabUp" title="Наверх">↑</button>
+</div>
+<div class="toasts" id="toasts"></div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
